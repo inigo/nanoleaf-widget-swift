@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		275764C82B193E8C005C33CA /* nanoleaf_widgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764C72B193E8C005C33CA /* nanoleaf_widgetApp.swift */; };
+		275764CA2B193E8C005C33CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764C92B193E8C005C33CA /* ContentView.swift */; };
+		275764CC2B193E8E005C33CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275764CB2B193E8E005C33CA /* Assets.xcassets */; };
+		275764CF2B193E8E005C33CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275764CE2B193E8E005C33CA /* Preview Assets.xcassets */; };
+		275764DA2B193E8E005C33CA /* nanoleaf_widgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764D92B193E8E005C33CA /* nanoleaf_widgetTests.swift */; };
+		275764E42B193E8E005C33CA /* nanoleaf_widgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764E32B193E8E005C33CA /* nanoleaf_widgetUITests.swift */; };
+		275764E62B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764E52B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		275764D62B193E8E005C33CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 275764BC2B193E8C005C33CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 275764C32B193E8C005C33CA;
+			remoteInfo = "nanoleaf widget";
+		};
+		275764E02B193E8E005C33CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 275764BC2B193E8C005C33CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 275764C32B193E8C005C33CA;
+			remoteInfo = "nanoleaf widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		275764C42B193E8C005C33CA /* nanoleaf widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanoleaf widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		275764C72B193E8C005C33CA /* nanoleaf_widgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nanoleaf_widgetApp.swift; sourceTree = "<group>"; };
+		275764C92B193E8C005C33CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		275764CB2B193E8E005C33CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		275764CE2B193E8E005C33CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		275764D02B193E8E005C33CA /* nanoleaf_widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nanoleaf_widget.entitlements; sourceTree = "<group>"; };
+		275764D52B193E8E005C33CA /* nanoleaf widgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nanoleaf widgetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		275764D92B193E8E005C33CA /* nanoleaf_widgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nanoleaf_widgetTests.swift; sourceTree = "<group>"; };
+		275764DF2B193E8E005C33CA /* nanoleaf widgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nanoleaf widgetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		275764E32B193E8E005C33CA /* nanoleaf_widgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nanoleaf_widgetUITests.swift; sourceTree = "<group>"; };
+		275764E52B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nanoleaf_widgetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		275764C12B193E8C005C33CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764D22B193E8E005C33CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764DC2B193E8E005C33CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		275764BB2B193E8C005C33CA = {
+			isa = PBXGroup;
+			children = (
+				275764C62B193E8C005C33CA /* nanoleaf widget */,
+				275764D82B193E8E005C33CA /* nanoleaf widgetTests */,
+				275764E22B193E8E005C33CA /* nanoleaf widgetUITests */,
+				275764C52B193E8C005C33CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		275764C52B193E8C005C33CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				275764C42B193E8C005C33CA /* nanoleaf widget.app */,
+				275764D52B193E8E005C33CA /* nanoleaf widgetTests.xctest */,
+				275764DF2B193E8E005C33CA /* nanoleaf widgetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		275764C62B193E8C005C33CA /* nanoleaf widget */ = {
+			isa = PBXGroup;
+			children = (
+				275764C72B193E8C005C33CA /* nanoleaf_widgetApp.swift */,
+				275764C92B193E8C005C33CA /* ContentView.swift */,
+				275764CB2B193E8E005C33CA /* Assets.xcassets */,
+				275764D02B193E8E005C33CA /* nanoleaf_widget.entitlements */,
+				275764CD2B193E8E005C33CA /* Preview Content */,
+			);
+			path = "nanoleaf widget";
+			sourceTree = "<group>";
+		};
+		275764CD2B193E8E005C33CA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				275764CE2B193E8E005C33CA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		275764D82B193E8E005C33CA /* nanoleaf widgetTests */ = {
+			isa = PBXGroup;
+			children = (
+				275764D92B193E8E005C33CA /* nanoleaf_widgetTests.swift */,
+			);
+			path = "nanoleaf widgetTests";
+			sourceTree = "<group>";
+		};
+		275764E22B193E8E005C33CA /* nanoleaf widgetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				275764E32B193E8E005C33CA /* nanoleaf_widgetUITests.swift */,
+				275764E52B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift */,
+			);
+			path = "nanoleaf widgetUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		275764C32B193E8C005C33CA /* nanoleaf widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275764E92B193E8E005C33CA /* Build configuration list for PBXNativeTarget "nanoleaf widget" */;
+			buildPhases = (
+				275764C02B193E8C005C33CA /* Sources */,
+				275764C12B193E8C005C33CA /* Frameworks */,
+				275764C22B193E8C005C33CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "nanoleaf widget";
+			productName = "nanoleaf widget";
+			productReference = 275764C42B193E8C005C33CA /* nanoleaf widget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		275764D42B193E8E005C33CA /* nanoleaf widgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275764EC2B193E8E005C33CA /* Build configuration list for PBXNativeTarget "nanoleaf widgetTests" */;
+			buildPhases = (
+				275764D12B193E8E005C33CA /* Sources */,
+				275764D22B193E8E005C33CA /* Frameworks */,
+				275764D32B193E8E005C33CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				275764D72B193E8E005C33CA /* PBXTargetDependency */,
+			);
+			name = "nanoleaf widgetTests";
+			productName = "nanoleaf widgetTests";
+			productReference = 275764D52B193E8E005C33CA /* nanoleaf widgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		275764DE2B193E8E005C33CA /* nanoleaf widgetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275764EF2B193E8E005C33CA /* Build configuration list for PBXNativeTarget "nanoleaf widgetUITests" */;
+			buildPhases = (
+				275764DB2B193E8E005C33CA /* Sources */,
+				275764DC2B193E8E005C33CA /* Frameworks */,
+				275764DD2B193E8E005C33CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				275764E12B193E8E005C33CA /* PBXTargetDependency */,
+			);
+			name = "nanoleaf widgetUITests";
+			productName = "nanoleaf widgetUITests";
+			productReference = 275764DF2B193E8E005C33CA /* nanoleaf widgetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		275764BC2B193E8C005C33CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					275764C32B193E8C005C33CA = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					275764D42B193E8E005C33CA = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 275764C32B193E8C005C33CA;
+					};
+					275764DE2B193E8E005C33CA = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 275764C32B193E8C005C33CA;
+					};
+				};
+			};
+			buildConfigurationList = 275764BF2B193E8C005C33CA /* Build configuration list for PBXProject "nanoleaf widget" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 275764BB2B193E8C005C33CA;
+			productRefGroup = 275764C52B193E8C005C33CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				275764C32B193E8C005C33CA /* nanoleaf widget */,
+				275764D42B193E8E005C33CA /* nanoleaf widgetTests */,
+				275764DE2B193E8E005C33CA /* nanoleaf widgetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		275764C22B193E8C005C33CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275764CF2B193E8E005C33CA /* Preview Assets.xcassets in Resources */,
+				275764CC2B193E8E005C33CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764D32B193E8E005C33CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764DD2B193E8E005C33CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		275764C02B193E8C005C33CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275764CA2B193E8C005C33CA /* ContentView.swift in Sources */,
+				275764C82B193E8C005C33CA /* nanoleaf_widgetApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764D12B193E8E005C33CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275764DA2B193E8E005C33CA /* nanoleaf_widgetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764DB2B193E8E005C33CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275764E62B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift in Sources */,
+				275764E42B193E8E005C33CA /* nanoleaf_widgetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		275764D72B193E8E005C33CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 275764C32B193E8C005C33CA /* nanoleaf widget */;
+			targetProxy = 275764D62B193E8E005C33CA /* PBXContainerItemProxy */;
+		};
+		275764E12B193E8E005C33CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 275764C32B193E8C005C33CA /* nanoleaf widget */;
+			targetProxy = 275764E02B193E8E005C33CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		275764E72B193E8E005C33CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		275764E82B193E8E005C33CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		275764EA2B193E8E005C33CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "nanoleaf widget/nanoleaf_widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"nanoleaf widget/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		275764EB2B193E8E005C33CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "nanoleaf widget/nanoleaf_widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"nanoleaf widget/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		275764ED2B193E8E005C33CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widgetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nanoleaf widget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nanoleaf widget";
+			};
+			name = Debug;
+		};
+		275764EE2B193E8E005C33CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widgetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nanoleaf widget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nanoleaf widget";
+			};
+			name = Release;
+		};
+		275764F02B193E8E005C33CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widgetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "nanoleaf widget";
+			};
+			name = Debug;
+		};
+		275764F12B193E8E005C33CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widgetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "nanoleaf widget";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		275764BF2B193E8C005C33CA /* Build configuration list for PBXProject "nanoleaf widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275764E72B193E8E005C33CA /* Debug */,
+				275764E82B193E8E005C33CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		275764E92B193E8E005C33CA /* Build configuration list for PBXNativeTarget "nanoleaf widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275764EA2B193E8E005C33CA /* Debug */,
+				275764EB2B193E8E005C33CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		275764EC2B193E8E005C33CA /* Build configuration list for PBXNativeTarget "nanoleaf widgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275764ED2B193E8E005C33CA /* Debug */,
+				275764EE2B193E8E005C33CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		275764EF2B193E8E005C33CA /* Build configuration list for PBXNativeTarget "nanoleaf widgetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275764F02B193E8E005C33CA /* Debug */,
+				275764F12B193E8E005C33CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 275764BC2B193E8C005C33CA /* Project object */;
+}
