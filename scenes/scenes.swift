@@ -40,15 +40,48 @@ struct SimpleEntry: TimelineEntry {
 
 struct scenesEntryView : View {
     var entry: Provider.Entry
+    
+    struct LinkItem: Hashable {
+        let emoji: String
+        let name: String
+    }
 
     var body: some View {
-        let destinations = ["Jungle", "Cocoa Beach", "Blaze", "Date Night", "Starlight"]
-        
+        // 🐅 🏖  🔥  💖  🌟
+        let destinations = [
+            LinkItem(emoji: "🌲",name: "Jungle"),
+            LinkItem(emoji: "🏖", name: "Cocoa Beach"),
+            LinkItem(emoji: "🔥",name: "Blaze"),
+            LinkItem(emoji: "💖", name: "Date Night"),
+            LinkItem(emoji: "🌟", name: "Starlight"),
+            LinkItem(emoji: "🎁", name: "Merry Christmas"),
+            
+        ]
+
         VStack(spacing: 5) {
-            ForEach(destinations, id: \.self) { destination in
-                Link(destination, destination: URL(string: "nanoleafwidget://\(destination.replacingOccurrences(of: " ", with: ""))")!)
+            ForEach(0..<3) { rowIndex in // 3 rows
+                HStack(spacing: 15) {
+                    ForEach(0..<2) { columnIndex in // 2 columns
+                        let offset = rowIndex * 2 + columnIndex
+                        if offset < destinations.count {
+                            let d = destinations[offset]
+                            Link(destination: URL(string: "nanoleafwidget://\(d.name.replacingOccurrences(of: " ", with: ""))")!) {
+                                Text(d.emoji).font(.system(size: 40))
+                            }.help(d.name)
+                        }
+                    }
+                }
             }
         }
+
+        
+//        VStack(spacing: 5) {
+//            ForEach(destinations, id: \.self) { d in
+//                Link(destination: URL(string: "nanoleafwidget://\(d.name.replacingOccurrences(of: " ", with: ""))")!) {
+//                    Text(d.emoji).font(.system(size: 40))
+//                }.help(d.name)
+//            }
+//        }
     }
 }
 
