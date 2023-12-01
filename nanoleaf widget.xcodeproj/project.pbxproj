@@ -14,6 +14,13 @@
 		275764DA2B193E8E005C33CA /* nanoleaf_widgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764D92B193E8E005C33CA /* nanoleaf_widgetTests.swift */; };
 		275764E42B193E8E005C33CA /* nanoleaf_widgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764E32B193E8E005C33CA /* nanoleaf_widgetUITests.swift */; };
 		275764E62B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764E52B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift */; };
+		275764F92B193ECE005C33CA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275764F82B193ECD005C33CA /* WidgetKit.framework */; };
+		275764FB2B193ECE005C33CA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275764FA2B193ECE005C33CA /* SwiftUI.framework */; };
+		275764FE2B193ECE005C33CA /* scenesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764FD2B193ECE005C33CA /* scenesBundle.swift */; };
+		275765002B193ECE005C33CA /* scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275764FF2B193ECE005C33CA /* scenes.swift */; };
+		275765022B193ECE005C33CA /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275765012B193ECE005C33CA /* AppIntent.swift */; };
+		275765042B193ECF005C33CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275765032B193ECF005C33CA /* Assets.xcassets */; };
+		275765092B193ECF005C33CA /* scenesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 275764F62B193ECD005C33CA /* scenesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,28 @@
 			remoteGlobalIDString = 275764C32B193E8C005C33CA;
 			remoteInfo = "nanoleaf widget";
 		};
+		275765072B193ECF005C33CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 275764BC2B193E8C005C33CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 275764F52B193ECD005C33CA;
+			remoteInfo = scenesExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2757650D2B193ECF005C33CA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				275765092B193ECF005C33CA /* scenesExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		275764C42B193E8C005C33CA /* nanoleaf widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanoleaf widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +73,15 @@
 		275764DF2B193E8E005C33CA /* nanoleaf widgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nanoleaf widgetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		275764E32B193E8E005C33CA /* nanoleaf_widgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nanoleaf_widgetUITests.swift; sourceTree = "<group>"; };
 		275764E52B193E8E005C33CA /* nanoleaf_widgetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nanoleaf_widgetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		275764F62B193ECD005C33CA /* scenesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = scenesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		275764F82B193ECD005C33CA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		275764FA2B193ECE005C33CA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		275764FD2B193ECE005C33CA /* scenesBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scenesBundle.swift; sourceTree = "<group>"; };
+		275764FF2B193ECE005C33CA /* scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scenes.swift; sourceTree = "<group>"; };
+		275765012B193ECE005C33CA /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		275765032B193ECF005C33CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		275765052B193ECF005C33CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275765062B193ECF005C33CA /* scenes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = scenes.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +106,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		275764F32B193ECD005C33CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275764FB2B193ECE005C33CA /* SwiftUI.framework in Frameworks */,
+				275764F92B193ECE005C33CA /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +124,8 @@
 				275764C62B193E8C005C33CA /* nanoleaf widget */,
 				275764D82B193E8E005C33CA /* nanoleaf widgetTests */,
 				275764E22B193E8E005C33CA /* nanoleaf widgetUITests */,
+				275764FC2B193ECE005C33CA /* scenes */,
+				275764F72B193ECD005C33CA /* Frameworks */,
 				275764C52B193E8C005C33CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +136,7 @@
 				275764C42B193E8C005C33CA /* nanoleaf widget.app */,
 				275764D52B193E8E005C33CA /* nanoleaf widgetTests.xctest */,
 				275764DF2B193E8E005C33CA /* nanoleaf widgetUITests.xctest */,
+				275764F62B193ECD005C33CA /* scenesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +178,28 @@
 			path = "nanoleaf widgetUITests";
 			sourceTree = "<group>";
 		};
+		275764F72B193ECD005C33CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				275764F82B193ECD005C33CA /* WidgetKit.framework */,
+				275764FA2B193ECE005C33CA /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		275764FC2B193ECE005C33CA /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				275764FD2B193ECE005C33CA /* scenesBundle.swift */,
+				275764FF2B193ECE005C33CA /* scenes.swift */,
+				275765012B193ECE005C33CA /* AppIntent.swift */,
+				275765032B193ECF005C33CA /* Assets.xcassets */,
+				275765052B193ECF005C33CA /* Info.plist */,
+				275765062B193ECF005C33CA /* scenes.entitlements */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,10 +210,12 @@
 				275764C02B193E8C005C33CA /* Sources */,
 				275764C12B193E8C005C33CA /* Frameworks */,
 				275764C22B193E8C005C33CA /* Resources */,
+				2757650D2B193ECF005C33CA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				275765082B193ECF005C33CA /* PBXTargetDependency */,
 			);
 			name = "nanoleaf widget";
 			productName = "nanoleaf widget";
@@ -185,6 +258,23 @@
 			productReference = 275764DF2B193E8E005C33CA /* nanoleaf widgetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		275764F52B193ECD005C33CA /* scenesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2757650A2B193ECF005C33CA /* Build configuration list for PBXNativeTarget "scenesExtension" */;
+			buildPhases = (
+				275764F22B193ECD005C33CA /* Sources */,
+				275764F32B193ECD005C33CA /* Frameworks */,
+				275764F42B193ECD005C33CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = scenesExtension;
+			productName = scenesExtension;
+			productReference = 275764F62B193ECD005C33CA /* scenesExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +296,9 @@
 						CreatedOnToolsVersion = 15.0.1;
 						TestTargetID = 275764C32B193E8C005C33CA;
 					};
+					275764F52B193ECD005C33CA = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 275764BF2B193E8C005C33CA /* Build configuration list for PBXProject "nanoleaf widget" */;
@@ -224,6 +317,7 @@
 				275764C32B193E8C005C33CA /* nanoleaf widget */,
 				275764D42B193E8E005C33CA /* nanoleaf widgetTests */,
 				275764DE2B193E8E005C33CA /* nanoleaf widgetUITests */,
+				275764F52B193ECD005C33CA /* scenesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +343,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275764F42B193ECD005C33CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275765042B193ECF005C33CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +383,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		275764F22B193ECD005C33CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275765002B193ECE005C33CA /* scenes.swift in Sources */,
+				275764FE2B193ECE005C33CA /* scenesBundle.swift in Sources */,
+				275765022B193ECE005C33CA /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +405,11 @@
 			isa = PBXTargetDependency;
 			target = 275764C32B193E8C005C33CA /* nanoleaf widget */;
 			targetProxy = 275764E02B193E8E005C33CA /* PBXContainerItemProxy */;
+		};
+		275765082B193ECF005C33CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 275764F52B193ECD005C33CA /* scenesExtension */;
+			targetProxy = 275765072B193ECF005C33CA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -418,6 +535,7 @@
 		275764EA2B193E8E005C33CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "nanoleaf widget/nanoleaf_widget.entitlements";
@@ -427,6 +545,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"nanoleaf widget/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nanoleaf widget";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,6 +564,7 @@
 		275764EB2B193E8E005C33CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "nanoleaf widget/nanoleaf_widget.entitlements";
@@ -452,6 +574,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"nanoleaf widget/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nanoleaf widget";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,6 +658,60 @@
 			};
 			name = Release;
 		};
+		2757650B2B193ECF005C33CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = scenes/scenes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = scenes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = scenes;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widget.scenes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2757650C2B193ECF005C33CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = scenes/scenes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = scenes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = scenes;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.surguy.nanoleaf-widget.scenes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,6 +747,15 @@
 			buildConfigurations = (
 				275764F02B193E8E005C33CA /* Debug */,
 				275764F12B193E8E005C33CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2757650A2B193ECF005C33CA /* Build configuration list for PBXNativeTarget "scenesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2757650B2B193ECF005C33CA /* Debug */,
+				2757650C2B193ECF005C33CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

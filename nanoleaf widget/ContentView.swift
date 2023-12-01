@@ -4,6 +4,7 @@
 //
 //  Created by Inigo Surguy on 30/11/2023.
 //
+//https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension
 
 import SwiftUI
 
@@ -13,7 +14,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Nanoleaf thingie!")
         }
         .padding()
     }
