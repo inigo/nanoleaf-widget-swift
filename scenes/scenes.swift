@@ -47,7 +47,6 @@ struct scenesEntryView : View {
     }
 
     var body: some View {
-        // 🐅 🏖  🔥  💖  🌟
         let destinations = [
             LinkItem(emoji: "🌲",name: "Jungle"),
             LinkItem(emoji: "🏖", name: "Cocoa Beach"),
@@ -74,14 +73,6 @@ struct scenesEntryView : View {
             }
         }
 
-        
-//        VStack(spacing: 5) {
-//            ForEach(destinations, id: \.self) { d in
-//                Link(destination: URL(string: "nanoleafwidget://\(d.name.replacingOccurrences(of: " ", with: ""))")!) {
-//                    Text(d.emoji).font(.system(size: 40))
-//                }.help(d.name)
-//            }
-//        }
     }
 }
 

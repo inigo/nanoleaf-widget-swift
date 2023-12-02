@@ -10,9 +10,8 @@ import AppIntents
 
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Configuration"
-    static var description = IntentDescription("This is an example widget.")
+    static var description = IntentDescription("Nanoleaf scene changer widget.")
 
-    // An example configurable parameter.
-    @Parameter(title: "Favorite Emoji", default: "😃")
-    var favoriteEmoji: String
+    @Parameter(title: "Scene names (comma-separated, first character will be the icon)", default: "🌲 Jungle, 🏖 Cocoa Beach, 🔥 Blaze, 💖 Date Night, 🌟 Starlight, 🎁 Merry Christmas")
+    var scenes: String
 }
