@@ -45,7 +45,7 @@ final class nanoleaf_widgetTests: XCTestCase {
     
     
     func testChangeSceneNativeOther() async throws {
-        let result = try await changeScene(sceneName: "Date Night", ipAddressAndPort: "192.168.5.121:16021", authToken: "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c")
+        let result = try await changeScene(sceneName: "Jungle", ipAddressAndPort: "192.168.5.121:16021", authToken: "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c")
         XCTAssertNotNil(result)
     }
 
@@ -59,4 +59,6 @@ final class nanoleaf_widgetTests: XCTestCase {
     
 }
 
-extension XCTestExpectation: Expectation {}
+extension XCTestExpectation: Expectation {
+    public func setIpAddressAndPort(ipAddressAndPort: String) { }
+}

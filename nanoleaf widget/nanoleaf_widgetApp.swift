@@ -2,6 +2,15 @@
 //  nanoleaf_widgetApp.swift
 //  nanoleaf widget
 //
+// Files are:
+//      ~/Library/Preferences/net.surguy.nanoleaf-widget.plist
+//              cd ~/Library/Preferences
+//              defaults read net.surguy.nanoleaf-widget.plist ipAddressAndPort
+//              defaults read net.surguy.nanoleaf-widget.plist authToken
+//      ~/Library/Caches/net.surguy.nanoleaf-widget
+//      ~/Library/Containers/net.surguy.nanoleaf-widget.scenes
+//      ~/Library/Containers/net.surguy.nanoleaf-widget
+//
 //  Created by Inigo Surguy on 30/11/2023.
 //
 
@@ -18,6 +27,83 @@ private var cancellables = Set<AnyCancellable>()
 
 @main
 struct nanoleaf_widgetApp: App {
+    
+    init() {
+        ensureConnectionKnown()
+    }
+    
+    
+    func ensureConnectionKnown() {
+        var ipAddressAndPort: String? = UserDefaults.standard.object(forKey: "ipAddressAndPort") as? String
+        let authToken: String? = UserDefaults.standard.object(forKey: "authToken") as? String
+                
+        if ipAddressAndPort==nil {
+            logger.log("No IP address found - searching now...")
+            ipAddressAndPort = lookupAddress()
+            logger.log("Retrieved IP address: \(ipAddressAndPort ?? "nil", privacy: .public)")
+            UserDefaults.standard.set(ipAddressAndPort, forKey: "ipAddressAndPort")
+        }
+        
+        if let safeIpAddressAndPort = ipAddressAndPort {
+            logger.log("IP address is : \(safeIpAddressAndPort, privacy: .public)")
+            if authToken==nil {
+                Task {
+                    logger.log("Looking up auth token")
+                    var newAuthToken = await getAuthToken(ipAddressAndPort: safeIpAddressAndPort)
+                    if let safeAuthToken = newAuthToken {
+                        UserDefaults.standard.set(safeAuthToken, forKey: "authToken")
+                    } else {
+                        logger.warning("No auth token available - probably need to hold the power button to put light in pairing mode")
+                        showAlertDialog() // Only doing this once to be less annoying - will repeat on next click
+                        newAuthToken = await getAuthToken(ipAddressAndPort: safeIpAddressAndPort)
+                        if let safeAuthToken = newAuthToken {
+                            UserDefaults.standard.set(safeAuthToken, forKey: "authToken")
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func lookupAddress() -> String? {
+        let semaphore = DispatchSemaphore(value: 0)
+        var retrievedIpAddressAndPort: String? = nil
+
+        class LocalExpectation: Expectation {
+                let semaphore: DispatchSemaphore
+                var setter: (String) -> Void
+
+                init(semaphore: DispatchSemaphore, setter: @escaping (String) -> Void) {
+                    self.semaphore = semaphore
+                    self.setter = setter
+                }
+
+                func setIpAddressAndPort(ipAddressAndPort: String) {
+                    setter(ipAddressAndPort)
+                }
+                
+                func fulfill() {
+                    semaphore.signal()
+                }
+            }
+        
+        let expectation = LocalExpectation(semaphore: semaphore) { newValue in
+            retrievedIpAddressAndPort = newValue
+        }
+        let serviceDiscovery = ServiceDiscovery(expectation: expectation)
+        serviceDiscovery.startBrowsing()
+        
+        DispatchQueue.global().async {
+            if semaphore.wait(timeout: .now() + 10) == .timedOut {
+                logger.log("Timeout reached")
+            } else {
+                logger.log("IP address and port set to: \(retrievedIpAddressAndPort ?? "nil", privacy: .public)")
+                // Setting here, because this isn't passed back - probably because it is async
+                UserDefaults.standard.set(retrievedIpAddressAndPort, forKey: "ipAddressAndPort")
+            }
+        }
+        return retrievedIpAddressAndPort
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -30,51 +116,37 @@ struct nanoleaf_widgetApp: App {
                     
                     if (sceneName.isEmpty) { sceneName = "Jungle" }
                     
-                    logger.log("Launching scene yet more: \(sceneName, privacy: .public)")
+                    logger.log("Launching scene: \(sceneName, privacy: .public)")
+                    
+                    ensureConnectionKnown()
 
-                    var ipAddressAndPort: String? = UserDefaults.standard.object(forKey: "ipAddressAndPort") as? String
-
-                    if (ipAddressAndPort==nil) {
-                        ipAddressAndPort = "192.168.5.121:16021"
-                        UserDefaults.standard.set(ipAddressAndPort, forKey: "ipAddressAndPort")
-                    }
-
+                    let ipAddressAndPort: String? = UserDefaults.standard.object(forKey: "ipAddressAndPort") as? String
                     if let ipAddressAndPort = ipAddressAndPort {
                         logger.info("IP address and port is \(ipAddressAndPort, privacy: .public)")
                     } else {
                         logger.info("IP address and port is not set")
                     }
 
-
-                    var authToken = UserDefaults.standard.object(forKey: "authToken") as? String
-                    if (authToken==nil) {
-                        authToken = "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c"
-                        UserDefaults.standard.set(authToken, forKey: "authToken")
-                    }
-
+                    let authToken = UserDefaults.standard.object(forKey: "authToken") as? String
                     if let authToken = authToken {
                         logger.info("Auth token is \(authToken, privacy: .public)")
                     } else {
                         logger.info("Auth token is not set")
                     }
                     
-
-         
-                    Task {
-                        var result: Data // Replace 'ResultType' with the actual type returned by changeScene
-                        do {
-                            result = try await changeScene(sceneName: sceneName, ipAddressAndPort: ipAddressAndPort ?? "192.168.5.121:16021", authToken: authToken ?? "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c")
-                            // You can use 'result' here if needed
-                        } catch {
-                            result = Data()
-                            // Log the error here
-                            logger.error("An error occurred: \(error.localizedDescription, privacy: .public)")
+                    if let safeAuthToken = authToken, let safeIpAddressAndPort = ipAddressAndPort {
+                        Task {
+                            var result: Data
+                            do {
+                                result = try await changeScene(sceneName: sceneName, ipAddressAndPort: safeIpAddressAndPort, authToken: safeAuthToken)
+                            } catch {
+                                result = Data()
+                                logger.error("An error occurred: \(error.localizedDescription, privacy: .public)")
+                            }
+                            NSApp.terminate(nil)
+                            return result
                         }
-                        NSApp.terminate(nil)
-                        return result
                     }
-
-
                     
                 }
             }
@@ -164,6 +236,7 @@ internal func sendHttpRequest(urlString: String, method: String, bodyDictionary:
 
 protocol Expectation {
     func fulfill()
+    func setIpAddressAndPort(ipAddressAndPort: String)
 }
 
 class ServiceDiscovery {
@@ -196,9 +269,9 @@ class ServiceDiscovery {
         let params = NWParameters(tls: nil, tcp: options)
         params.includePeerToPeer = true
 
-        // There is both an ipv4 and an ipv6; this forces it to use ipv4
-//        let ip = params.defaultProtocolStack.internetProtocol! as! NWProtocolIP.Options
-//        ip.version = .v4
+        // There is both an ipv4 and an ipv6; this forces it to use ipv4. ipv6 does not appear to be accessible
+        let ip = params.defaultProtocolStack.internetProtocol! as! NWProtocolIP.Options
+        ip.version = .v4
         
         return params
     }
@@ -211,22 +284,22 @@ class ServiceDiscovery {
                 if let path = connection.currentPath, let endpoint = path.remoteEndpoint {
                     switch endpoint {
                         case .hostPort(let host, let port):
-                            let ipAddress = host.debugDescription.components(separatedBy: "%").first ?? host.debugDescription
-                            
-                            var url = ""
-                            switch host {
-                            case .ipv6:
-                                url = "http://[\(ipAddress)]:\(port)/"
-                            default:
-                                url = "http://\(ipAddress):\(port)/"
-                            }
-                            
-                            print("Resolved IP: \(ipAddress), Port: \(port)")
-                            print("URL is \(url)")
+                        let ipAddress = host.debugDescription.components(separatedBy: "%").first ?? host.debugDescription
+                        
+                        var ipAddressAndPort = ""
+                        switch host {
+                        case .ipv6:
+                            ipAddressAndPort = "[\(ipAddress)]:\(port)"
+                        default:
+                            ipAddressAndPort = "\(ipAddress):\(port)"
+                        }
+
+                        logger.log("IP address and port is \(ipAddressAndPort, privacy: .public)")
+                        self.expectation?.setIpAddressAndPort(ipAddressAndPort: ipAddressAndPort)
                         default:
                             break
                     }
-               }
+                }
                 
                 self.expectation?.fulfill()
             }
