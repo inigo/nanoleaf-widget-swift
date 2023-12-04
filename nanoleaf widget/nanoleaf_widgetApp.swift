@@ -9,6 +9,7 @@ import SwiftUI
 import os
 import Foundation
 import Combine
+import Network
 
 
 let logger = Logger(subsystem: "net.surguy.nanoleafwidget", category: "widgetview")
@@ -30,10 +31,7 @@ struct nanoleaf_widgetApp: App {
                     if (sceneName.isEmpty) { sceneName = "Jungle" }
                     
                     logger.log("Launching scene yet more: \(sceneName, privacy: .public)")
-                    
-//                    let ipAddressAndPort: String? = "192.168.5.121:16021"
-//                    let authToken: String? = "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c"
-//                    
+
                     var ipAddressAndPort: String? = UserDefaults.standard.object(forKey: "ipAddressAndPort") as? String
 
                     if (ipAddressAndPort==nil) {
@@ -162,4 +160,82 @@ internal func sendHttpRequest(urlString: String, method: String, bodyDictionary:
 
     return data
 }
+
+
+protocol Expectation {
+    func fulfill()
+}
+
+class ServiceDiscovery {
+    private var browser: NWBrowser?
+    private var expectation: Expectation?
+    
+    init(expectation: Expectation? = nil) {
+        let parameters = NWParameters()
+        parameters.includePeerToPeer = true
+        self.expectation = expectation
+
+        let browserDescriptor = NWBrowser.Descriptor.bonjour(type: "_nanoleafapi._tcp", domain: "local")
+        self.browser = NWBrowser(for: browserDescriptor, using: parameters)
+    }
+
+    internal func startBrowsing() {
+        self.browser?.start(queue: .main)
+        self.browser?.browseResultsChangedHandler = { results, changes in
+            if let result = results.first {
+                self.resolveService(result)
+            }
+        }
+    }
+        
+    func getConnectionParams() -> NWParameters {
+        let options = NWProtocolTCP.Options()
+        options.enableFastOpen = true
+        options.connectionTimeout = 10
+        
+        let params = NWParameters(tls: nil, tcp: options)
+        params.includePeerToPeer = true
+
+        // There is both an ipv4 and an ipv6; this forces it to use ipv4
+//        let ip = params.defaultProtocolStack.internetProtocol! as! NWProtocolIP.Options
+//        ip.version = .v4
+        
+        return params
+    }
+    
+    func resolveService(_ result: NWBrowser.Result) {
+        let connection = NWConnection(to: result.endpoint, using: getConnectionParams())
+
+        connection.stateUpdateHandler = { state in
+            if state == .ready {
+                if let path = connection.currentPath, let endpoint = path.remoteEndpoint {
+                    switch endpoint {
+                        case .hostPort(let host, let port):
+                            let ipAddress = host.debugDescription.components(separatedBy: "%").first ?? host.debugDescription
+                            
+                            var url = ""
+                            switch host {
+                            case .ipv6:
+                                url = "http://[\(ipAddress)]:\(port)/"
+                            default:
+                                url = "http://\(ipAddress):\(port)/"
+                            }
+                            
+                            print("Resolved IP: \(ipAddress), Port: \(port)")
+                            print("URL is \(url)")
+                        default:
+                            break
+                    }
+               }
+                
+                self.expectation?.fulfill()
+            }
+        }
+
+        connection.start(queue: .main)
+    }
+
+
+}
+
 

@@ -33,12 +33,13 @@ final class nanoleaf_widgetTests: XCTestCase {
 
     
     func testChangeScene() async throws {
-        try await changeScene(sceneName: "Blaze", ipAddressAndPort: "192.168.5.121:16021", authToken: "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c")
+        let result = try await changeScene(sceneName: "Blaze", ipAddressAndPort: "192.168.5.121:16021", authToken: "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c")
+        XCTAssertNotNil(result)
     }
     
     func testGetAuthToken() async throws {
         let result = await getAuthToken(ipAddressAndPort: "192.168.5.121:16021")
-        print("Auth code is \(result)")
+        print("Auth code is \(String(describing: result))")
         XCTAssertNotNil(result)
     }
     
@@ -47,5 +48,15 @@ final class nanoleaf_widgetTests: XCTestCase {
         let result = try await changeScene(sceneName: "Date Night", ipAddressAndPort: "192.168.5.121:16021", authToken: "p8rTNKJ0TaCLORJD12uWMHiVGs2Wnp9c")
         XCTAssertNotNil(result)
     }
+
+    func testServiceDiscovery() throws {
+        let expectation = XCTestExpectation(description: "Network service discovery")
+        
+        let serviceDiscovery = ServiceDiscovery(expectation: expectation)
+        serviceDiscovery.startBrowsing()
+        wait(for: [expectation], timeout: 10)
+    }
     
 }
+
+extension XCTestExpectation: Expectation {}
