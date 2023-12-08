@@ -45,17 +45,24 @@ struct scenesEntryView : View {
         let emoji: String
         let name: String
     }
+    
+    func scenesToDestinations(sceneText: String)->[LinkItem] {
+        let scenes = sceneText.split(separator: ",", omittingEmptySubsequences: true)
+        return scenes.map{ s in s.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter{ s in !s.isEmpty }
+            .map{ s in LinkItem(emoji: String(s.first!), name: s.dropFirst().trimmingCharacters(in: .whitespacesAndNewlines)) }
+    }
+    
+    func getDestinationsFromConfig()->[LinkItem] {
+        var sceneText: String = entry.configuration.scenes
+        if (sceneText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) {
+            sceneText = "🏖 Cocoa Beach, 🌲 Jungle, 🔥 Blaze, 💖 Date Night, 🌟 Starlight, 🎁 Merry Christmas"
+        }
+        return scenesToDestinations(sceneText: sceneText)
+    }
 
     var body: some View {
-        let destinations = [
-            LinkItem(emoji: "🌲",name: "Jungle"),
-            LinkItem(emoji: "🏖", name: "Cocoa Beach"),
-            LinkItem(emoji: "🔥",name: "Blaze"),
-            LinkItem(emoji: "💖", name: "Date Night"),
-            LinkItem(emoji: "🌟", name: "Starlight"),
-            LinkItem(emoji: "🎁", name: "Merry Christmas"),
-            
-        ]
+        let destinations = getDestinationsFromConfig()
 
         VStack(spacing: 5) {
             ForEach(0..<3) { rowIndex in // 3 rows
